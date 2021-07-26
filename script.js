@@ -26,7 +26,7 @@ var obj;
 var modelo = new THREE.Object3D();
 var cant = 15;
 var radio = 70;
-var usarGeoAR = true;
+var usarGeoAR = false;
 var lista = [
     {lt:-34.9275039,lg:-57.9371359}
 ];
@@ -154,9 +154,11 @@ function animar(){
     }
     if(imprimirD){
         var imprimir = true;
-        for(var i=0;i<puntos.length;i++){
-            if(puntos[i].getAttribute('distance')==undefined){
-                imprimir=false;
+        if(usarGeoAR){
+            for(var i=0;i<puntos.length;i++){
+                if(puntos[i].getAttribute('distance')==undefined){
+                    imprimir=false;
+                }
             }
         }
         if(imprimir){
