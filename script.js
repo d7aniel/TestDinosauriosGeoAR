@@ -26,7 +26,7 @@ var obj;
 var modelo = new THREE.Object3D();
 var cant = 15;
 var radio = 70;
-var usarGeoAR = false;
+var usarGeoAR = true;
 var lista = [
     {lt:-34.9275039,lg:-57.9371359}
 ];
