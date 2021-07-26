@@ -28,7 +28,8 @@ var cant = 15;
 var radio = 70;
 var usarGeoAR = true;
 var lista = [
-    {lt:-34.9275039,lg:-57.9371359}
+    {lt:-34.901300896535304,lg:-57.96897548211151}
+    //{lt:-34.9275039,lg:-57.9371359}
 ];
 var poss = [
   new THREE.Vector2(0, 0),
@@ -178,8 +179,8 @@ function animar(){
         }
     }
 
-    renderBloom(true);
-	finalComposer.render();
+    //renderBloom(true);
+	//finalComposer.render();
 
 }
 
