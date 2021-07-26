@@ -43,11 +43,12 @@ var poss = [
 var escena = document.querySelector('a-scene');
 console.log(escena);
 
-const renderScene;
-const bloomPass;
-const bloomComposer;
-const finalPass;
-const finalComposer;
+let renderScene;
+let bloomPass;
+let bloomComposer;
+let finalPass;
+let finalComposer;
+
 if(usarBloom){
     escena.renderer.toneMapping = THREE.ReinhardToneMapping;
     renderScene = new RenderPass( escena.object3D, escena.camera );
