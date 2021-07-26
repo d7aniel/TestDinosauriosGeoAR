@@ -178,10 +178,9 @@ function animar(){
         }
     }
 
-    renderBloom(true);
-	//composer.render();
-    finalComposer.render();
-    //mover();
+    //renderBloom(true);
+	//finalComposer.render();
+    
 }
 
 function renderBloom( mask ) {
