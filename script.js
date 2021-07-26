@@ -27,6 +27,7 @@ var modelo = new THREE.Object3D();
 var cant = 15;
 var radio = 70;
 var usarGeoAR = true;
+var usarBloom = false;
 var lista = [
     {lt:-34.901300896535304,lg:-57.96897548211151}
     //{lt:-34.9275039,lg:-57.9371359}
@@ -42,38 +43,41 @@ var poss = [
 var escena = document.querySelector('a-scene');
 console.log(escena);
 
+const renderScene;
+const bloomPass;
+const bloomComposer;
+const finalPass;
+const finalComposer;
+if(usarBloom){
+    escena.renderer.toneMapping = THREE.ReinhardToneMapping;
+    renderScene = new RenderPass( escena.object3D, escena.camera );
+    bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+    bloomPass.threshold = params.bloomThreshold;
+    bloomPass.strength = params.bloomStrength;
+    bloomPass.radius = params.bloomRadius;
 
+    bloomComposer = new EffectComposer( escena.renderer );
+    bloomComposer.renderToScreen = false;
+    bloomComposer.addPass( renderScene );
+    bloomComposer.addPass( bloomPass );
 
-escena.renderer.toneMapping = THREE.ReinhardToneMapping;
+    finalPass = new ShaderPass(
+    	new THREE.ShaderMaterial( {
+    		uniforms: {
+    			baseTexture: { value: null },
+    			bloomTexture: { value: bloomComposer.renderTarget2.texture }
+    		},
+    		vertexShader: document.getElementById( 'vertexshader' ).textContent,
+    		fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+    		defines: {}
+    	} ), "baseTexture"
+    );
+    finalPass.needsSwap = true;
 
-const renderScene = new RenderPass( escena.object3D, escena.camera );
-
-const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-bloomPass.threshold = params.bloomThreshold;
-bloomPass.strength = params.bloomStrength;
-bloomPass.radius = params.bloomRadius;
-
-const bloomComposer = new EffectComposer( escena.renderer );
-bloomComposer.renderToScreen = false;
-bloomComposer.addPass( renderScene );
-bloomComposer.addPass( bloomPass );
-
-const finalPass = new ShaderPass(
-	new THREE.ShaderMaterial( {
-		uniforms: {
-			baseTexture: { value: null },
-			bloomTexture: { value: bloomComposer.renderTarget2.texture }
-		},
-		vertexShader: document.getElementById( 'vertexshader' ).textContent,
-		fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
-		defines: {}
-	} ), "baseTexture"
-);
-finalPass.needsSwap = true;
-
-const finalComposer = new EffectComposer( escena.renderer );
-finalComposer.addPass( renderScene );
-finalComposer.addPass( finalPass );
+    finalComposer = new EffectComposer( escena.renderer );
+    finalComposer.addPass( renderScene );
+    finalComposer.addPass( finalPass );
+}
 
 //sphere.layers.enable( BLOOM_SCENE );
 
@@ -179,8 +183,10 @@ function animar(){
         }
     }
 
-    //renderBloom(true);
-	//finalComposer.render();
+    if(usarBloom){
+        renderBloom(true);
+    	finalComposer.render();
+    }
 
 }
 
