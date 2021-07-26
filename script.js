@@ -31,8 +31,7 @@ var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
     {lt:-34.901916100509666,lg:-57.96917396557861},
-    //{lt:-34.901300896535304,lg:-57.96897548211151}
-    //{lt:-34.9275039,lg:-57.9371359}
+    {lt:-34.911773440267986,lg:-57.96628615770538}
 ];
 var poss = [
   new THREE.Vector2(0, 0),
@@ -170,15 +169,15 @@ function animar(){
             }
         }
         if(imprimir){
-            //var menor = parseFloat(puntos[0].getAttribute('distance'))
+            var menor = parseFloat(puntos[0].getAttribute('distance'))
             var indice = 0;
-            /*for(var i=1;i<puntos.length;i++){
+            for(var i=1;i<puntos.length;i++){
                 console.log(puntos[i].getAttribute('distance'));
                 if(parseFloat(puntos[i].getAttribute('distance'))<menor){
                     indice = i
                     menor = parseFloat(puntos[i].getAttribute('distance'));
                 }
-            }*/
+            }
             console.log(puntos[indice]);
             puntos[indice].object3D.add( objeto );
             texto.remove();
