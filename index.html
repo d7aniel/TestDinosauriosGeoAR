@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Los Pañuelos Siguen Rondando</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+</head>
+
+<body style='margin: 0; overflow: hidden;'>
+		<script type="x-shader/x-vertex" id="vertexshader">
+			varying vec2 vUv;
+			void main() {
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+		</script>
+		<script type="x-shader/x-fragment" id="fragmentshader">
+			uniform sampler2D baseTexture;
+			uniform sampler2D bloomTexture;
+			varying vec2 vUv;
+			void main() {
+				gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
+			}
+		</script>
+
+    <a-scene
+    effects="bloom, fxaa" bloom="radius: 0.66" fxaa
+	renderer="antialias: true; logarithmicDepthBuffer:true;"
+        vr-mode-ui="enabled: false"
+		embedded
+		arjs='sourceType: webcam; debugUIEnabled: false;'>
+        <a-entity light="type: ambient; color: #FFF"></a-entity>
+        <a-camera id='camera1' look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' rotation-reader> </a-camera>
+    </a-scene>
+<!--
+    <a-scene>
+        <a-entity light="type: ambient; color: #FFF"></a-entity>
+    </a-scene> -->
+
+
+    <script type='module' src='script.js'></script>
+</body>
