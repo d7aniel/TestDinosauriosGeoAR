@@ -26,6 +26,7 @@ var obj;
 var modelo = new THREE.Object3D();
 var cant = 15;
 var radio = 70;
+var simularPos = true;
 var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
@@ -161,7 +162,7 @@ function animar(){
     }
     if(imprimirD){
         var imprimir = true;
-        if(usarGeoAR){
+        if(usarGeoAR && !simularPos){
             for(var i=0;i<puntos.length;i++){
                 if(puntos[i].getAttribute('distance')==undefined){
                     imprimir=false;
