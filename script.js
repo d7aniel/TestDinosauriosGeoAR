@@ -26,7 +26,7 @@ var obj;
 var modelo = new THREE.Object3D();
 var cant = 15;
 var radio = 70;
-var simularPos = true;
+var simularPos = false;
 var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
@@ -100,7 +100,7 @@ for(var i=0;i<lista.length;i++){
     //escena.appendChild(punto);
 
 cargarModelo('./modelo/dino4.glb',modelo);
-modelo.scale.set(60,60,60);
+modelo.scale.set(150,150,150);
 // modelo.position.set(0,0,0);
 
 var objeto = new THREE.Object3D();
