@@ -98,8 +98,8 @@ for(var i=0;i<lista.length;i++){
 //modelo[i].scale.set(15,15,15);
     //escena.appendChild(punto);
 
-cargarModelo('./modelo/panredu2.glb',modelo);
-modelo.scale.set(15,15,15);
+cargarModelo('./modelo/dino4.glb',modelo);
+modelo.scale.set(60,60,60);
 // modelo.position.set(0,0,0);
 
 var objeto = new THREE.Object3D();
