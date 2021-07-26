@@ -29,7 +29,8 @@ var radio = 70;
 var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
-    {lt:-34.901300896535304,lg:-57.96897548211151}
+    {lt:-34.901916100509666,lg:-57.96917396557861},
+    //{lt:-34.901300896535304,lg:-57.96897548211151}
     //{lt:-34.9275039,lg:-57.9371359}
 ];
 var poss = [
@@ -98,7 +99,7 @@ for(var i=0;i<lista.length;i++){
     //escena.appendChild(punto);
 
 cargarModelo('./modelo/dino4.glb',modelo);
-modelo.scale.set(12,12,12);
+modelo.scale.set(15,15,15);
 // modelo.position.set(0,0,0);
 
 var objeto = new THREE.Object3D();
