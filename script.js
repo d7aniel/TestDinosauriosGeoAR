@@ -178,9 +178,9 @@ function animar(){
         }
     }
 
-    //renderBloom(true);
-	//finalComposer.render();
-    
+    renderBloom(true);
+	finalComposer.render();
+
 }
 
 function renderBloom( mask ) {
