@@ -1,5 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
-import {cargarModelo} from './CargarModelo.js';
+import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
 import {ObjetoModelo} from './Particula.js';
 
 
@@ -18,8 +18,6 @@ const params = {
 	bloomThreshold: 0,
 	bloomRadius: 0
 };
-
-
 
 
 var obj;
@@ -87,19 +85,33 @@ if(usarBloom){
 var puntos = [];
 for(var i=0;i<lista.length;i++){
     puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
+    puntos[i].setAttribute('gltf-model','#tree');
+    puntos[i].setAttribute('animation-mixer','');
     if(usarGeoAR){
         puntos[i].setAttribute('id','punto'+i);
         console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
         puntos[i].setAttribute('gps-entity-place', `latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
+		puntos[i].setAttribute("scale","0.04 0.04 0.04");
+    }else{
+        // <a-entity =""></a-entity>
+        puntos[i].setAttribute("scale","0.004 0.004 0.004");
+        puntos[i].setAttribute("position","0 0 -4");
     }
     escena.appendChild(puntos[i]);
 }
 //cargarModelo('./modelo/panredu.glb',modelo[i]);
 //modelo[i].scale.set(15,15,15);
     //escena.appendChild(punto);
+/*
+var mixer = {};
+cargarModeloConAnimacion('./modelo/dino4.glb',modelo,mixer);
 
-cargarModelo('./modelo/dino4.glb',modelo);
+if(usarGeoAR){
 modelo.scale.set(150,150,150);
+}else{
+    modelo.scale.set(0.001,0.001,0.001);
+    modelo.position.set(0,0,-4);
+}
 // modelo.position.set(0,0,0);
 
 var objeto = new THREE.Object3D();
@@ -179,7 +191,7 @@ function animar(){
                 }
             }
             console.log(puntos[indice]);
-            puntos[indice].object3D.add( objeto );
+            //puntos[indice].object3D.add( objeto );
             texto.remove();
             imprimirD = false;
         }
@@ -218,7 +230,7 @@ function restoreMaterial( obj ) {
 	}
 }
 
-animar();
+animar();*/
 
 /*
 function mover() {
