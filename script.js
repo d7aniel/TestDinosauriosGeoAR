@@ -30,7 +30,7 @@ var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
     {lt:-34.901916100509666,lg:-57.96917396557861},//casa mia
-    {lt:-34.91064696743423,lg:-57.96760044012268},
+    {lt:-34.90730360836868,lg:-57.967970584966736},
     {lt:-34.9275039,lg:-57.9371359},//casa gabriel
     {lt:-42.788091056592606, lg:-65.0034648805737},// el sitio,
     {lt:-34.915539,lg:-57.960809}
@@ -224,8 +224,8 @@ function animar(){
             }
             console.log(puntos[indice]);
             titulo.innerText = ""+indice;
-            titulo.style.color = "#ff00ff";
-            subtitulo.style.color = "#ff00ff";
+            titulo.style.color = "#ffff00";
+            subtitulo.style.color = "#ffff00";
             //titulo.remove();
             //puntos[indice].object3D.add( objeto );
             //texto.remove();
