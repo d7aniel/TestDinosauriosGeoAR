@@ -198,8 +198,10 @@ function animar(){
                 }
             }
             console.log(puntos[indice]);
+            titulo.style.color = "#ff0000";
+            subtitulo.style.color = "#ff0000";
             //puntos[indice].object3D.add( objeto );
-            texto.remove();
+            //texto.remove();
             imprimirD = false;
         }
     }
