@@ -1,5 +1,5 @@
 console.log("v.25")
-// import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
+import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 // import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
 // import {ObjetoModelo} from './Particula.js';
 
@@ -32,15 +32,22 @@ var lista = [
     {lt:-34.901916100509666,lg:-57.96917396557861},
     {lt:-34.911773440267986,lg:-57.96628615770538}
 ];
-// var poss = [
-//   new THREE.Vector2(0, 0),
-//   new THREE.Vector2(105, 0),
-//   new THREE.Vector2(-105, 0),
-//   new THREE.Vector2(0, -105),
-//   new THREE.Vector2(0, 105)
-// ];
+var posLuces = [
+  new THREE.Vector2(0, 0),
+  new THREE.Vector2(105, 0),
+  new THREE.Vector2(-105, 0),
+  new THREE.Vector2(0, -105),
+  new THREE.Vector2(0, 105)
+];
 var indice;
 var escena = document.querySelector('a-scene');
+var objeto = new THREE.Object3D();
+console.log("version 3 con varios puntos nuevitaaa con sistema mejorado por distancia ")
+for (let i=0; i<posLuces.length; i++) {
+    let luz1 = new THREE.PointLight( 0xffffff, 3, 100 );
+    luz1.position.set(posLuces[i].x,50,posLuces[i].y);
+    objeto.add( luz1 );
+}
 console.log(escena);
 //
 // let renderScene;
@@ -206,6 +213,7 @@ function animar(){
                     let modelo = document.createElement('a-entity');//document.getElementById('plaza');
                     // puntos[i].setAttribute('gltf-model','#tree');
                     modelo.setAttribute('animation-mixer','');
+                    modelo.object3D.add( objeto );
                     //puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
                     modelo.setAttribute('gltf-model','url(./modelo/dino5.glb)');
                     puntos[i].appendChild(modelo);
