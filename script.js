@@ -206,6 +206,7 @@ function animar(){
     }*/
 
 }
+animar();
 /*
 function renderBloom( mask ) {
 	if ( mask === true ) {
@@ -233,7 +234,7 @@ function restoreMaterial( obj ) {
 	}
 }
 
-animar();*/
+*/
 
 /*
 function mover() {
