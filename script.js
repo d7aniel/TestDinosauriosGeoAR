@@ -212,8 +212,8 @@ function animar(){
                 }
             }
             console.log(puntos[indice]);
-            titulo.style.color = "#00ff00";
-            subtitulo.style.color = "#00ff00";
+            titulo.style.color = "#0000ff";
+            subtitulo.style.color = "#0000ff";
             titulo.remove();
             //puntos[indice].object3D.add( objeto );
             //texto.remove();
