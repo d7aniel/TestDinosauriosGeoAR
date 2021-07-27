@@ -38,7 +38,7 @@ var lista = [
 //   new THREE.Vector2(0, -105),
 //   new THREE.Vector2(0, 105)
 // ];
-
+var indice;
 var escena = document.querySelector('a-scene');
 console.log(escena);
 //
@@ -87,7 +87,7 @@ for(var i=0;i<lista.length;i++){
     puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
     // puntos[i].setAttribute('gltf-model','#tree');
     puntos[i].setAttribute('animation-mixer','');
-	puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
+	//puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
     if(usarGeoAR){
         puntos[i].setAttribute('id','punto'+i);
         console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
@@ -175,8 +175,8 @@ function animar(){
         }
     }*/
     if(puntos[0].getAttribute('distanceMsg')!=undefined){
-        titulo.innerText = puntos[0].getAttribute('distanceMsg');
-        subtitulo.innerText = puntos[1].getAttribute('distanceMsg');
+        subtitulo.innerText = "Distancia ≈ "+puntos[0].getAttribute('distanceMsg');
+        //subtitulo.innerText = puntos[1].getAttribute('distanceMsg');
     }
     if(imprimirD){
         var imprimir = true;
@@ -197,9 +197,17 @@ function animar(){
                     menor = parseFloat(puntos[i].getAttribute('distance'));
                 }
             }
+            for(var i=1;i<puntos.length;i++){
+                if(i!=indice){
+                    puntos[i].parentNode.removeChild(puntos[i]);
+                }else{
+                    puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
+                }
+            }
             console.log(puntos[indice]);
-            titulo.style.color = "#ff0000";
-            subtitulo.style.color = "#ff0000";
+            titulo.style.color = "#00ff00";
+            subtitulo.style.color = "#00ff00";
+            titulo.remove();
             //puntos[indice].object3D.add( objeto );
             //texto.remove();
             imprimirD = false;
