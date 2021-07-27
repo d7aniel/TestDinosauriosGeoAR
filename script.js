@@ -87,7 +87,7 @@ for(var i=0;i<lista.length;i++){
     puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
     // puntos[i].setAttribute('gltf-model','#tree');
     puntos[i].setAttribute('animation-mixer','');
-	puntos[i].setAttribute('gltf-model','url(/modelo/dino5.gltf)');
+	puntos[i].setAttribute('gltf-model','url(./modelo/dino4.glb)');
     if(usarGeoAR){
         puntos[i].setAttribute('id','punto'+i);
         console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
