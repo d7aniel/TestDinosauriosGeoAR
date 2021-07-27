@@ -222,9 +222,10 @@ function animar(){
                 }
             }
             console.log(puntos[indice]);
+            titulo.innerText = ""+indice;
             titulo.style.color = "#00ffff";
             subtitulo.style.color = "#00ffff";
-            titulo.remove();
+            //titulo.remove();
             //puntos[indice].object3D.add( objeto );
             //texto.remove();
             imprimirD = false;
