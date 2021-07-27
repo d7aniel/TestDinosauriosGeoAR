@@ -1,4 +1,4 @@
-console.log("v.25")
+console.log("v.26")
 import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 // import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
 // import {ObjetoModelo} from './Particula.js';
@@ -220,8 +220,8 @@ function animar(){
                 }
             }
             console.log(puntos[indice]);
-            titulo.style.color = "#ff00ff";
-            subtitulo.style.color = "#ff00ff";
+            titulo.style.color = "#00ffff";
+            subtitulo.style.color = "#00ffff";
             titulo.remove();
             //puntos[indice].object3D.add( objeto );
             //texto.remove();
