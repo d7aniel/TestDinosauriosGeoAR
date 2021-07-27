@@ -174,7 +174,7 @@ function animar(){
             }
         }
     }*/
-    if(puntos[i].getAttribute('distanceMsg')!=undefined){
+    if(puntos[0].getAttribute('distanceMsg')!=undefined){
         titulo.innerText = puntos[0].getAttribute('distanceMsg');
         subtitulo.innerText = puntos[1].getAttribute('distanceMsg');
     }
