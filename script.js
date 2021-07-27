@@ -86,7 +86,7 @@ var puntos = [];
 for(var i=0;i<lista.length;i++){
     puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
     // puntos[i].setAttribute('gltf-model','#tree');
-    puntos[i].setAttribute('animation-mixer','');
+    // puntos[i].setAttribute('animation-mixer','');
 	//puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
     if(usarGeoAR){
         puntos[i].setAttribute('id','punto'+i);
@@ -201,7 +201,12 @@ function animar(){
                 if(i!=indice){
                     puntos[i].parentNode.removeChild(puntos[i]);
                 }else{
-                    puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
+                    let modelo = document.createElement('a-entity');//document.getElementById('plaza');
+                    // puntos[i].setAttribute('gltf-model','#tree');
+                    modelo.setAttribute('animation-mixer','');
+                    //puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
+                    modelo.setAttribute('gltf-model','url(./modelo/dino5.glb)');
+                    puntos[i].appendChild(modelo);
                 }
             }
             console.log(puntos[indice]);
