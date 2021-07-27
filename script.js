@@ -85,7 +85,7 @@ if(usarBloom){
 var puntos = [];
 for(var i=0;i<lista.length;i++){
     puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
-    puntos[i].setAttribute('gltf-model','#tree');
+    // puntos[i].setAttribute('gltf-model','#tree');
     puntos[i].setAttribute('animation-mixer','');
 	puntos[i].setAttribute('gltf-model','url(/modelo/dino5.gltf)');
     if(usarGeoAR){
