@@ -1,4 +1,4 @@
-console.log("v.26")
+console.log("v.27")
 import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 // import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
 // import {ObjetoModelo} from './Particula.js';
@@ -30,9 +30,10 @@ var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
     {lt:-34.901916100509666,lg:-57.96917396557861},//casa mia
-    {lt:-34.912380500953,lg:-57.96541175756653},
+    {lt:-34.912301,lg:-57.965412},
     {lt:-34.9275039,lg:-57.9371359},//casa gabriel
-    {lt:-42.788091056592606, lg:-65.0034648805737}// el sitio
+    {lt:-42.788091056592606, lg:-65.0034648805737},// el sitio,
+    {lt:-34.915539,lg:-57.960809}
 ];
 var posLuces = [
   new THREE.Vector2(0, 0),
