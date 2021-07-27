@@ -92,7 +92,7 @@ for(var i=0;i<lista.length;i++){
         puntos[i].setAttribute('id','punto'+i);
         console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
         puntos[i].setAttribute('gps-entity-place', `latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
-		puntos[i].setAttribute("scale","0.04 0.04 0.04");
+		puntos[i].setAttribute("scale","0.01 0.01 0.01");
     }else{
         // <a-entity =""></a-entity>
         puntos[i].setAttribute("scale","0.004 0.004 0.004");
@@ -139,7 +139,7 @@ for (let i=0; i<poss.length; i++) {
 // for (let i=0; i<cant; i++) {
 obj = new ObjetoModelo();
 objeto.add(obj.modelo);
-// }
+// }*/
 
 
 var texto =  document.createElement("div");
@@ -166,14 +166,14 @@ document.body.append(texto);
 var imprimirD = true;
 function animar(){
     requestAnimationFrame(animar);
-    if(modelo.children.length > 0){
+    /*if(modelo.children.length > 0){
         for (let i=0; i<cant; i++) {
             if(obj.sinModelo){
                 obj.modelo.add(modelo.clone());
                 obj.sinModelo = false;
             }
         }
-    }
+    }*/
     if(imprimirD){
         var imprimir = true;
         if(usarGeoAR && !simularPos){
