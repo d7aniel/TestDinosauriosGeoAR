@@ -82,23 +82,25 @@ if(usarBloom){
 //sphere.layers.enable( BLOOM_SCENE );
 
 
-var puntos = [];
-for(var i=0;i<lista.length;i++){
-    puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
-    puntos[i].setAttribute('gltf-model','#tree');
-    puntos[i].setAttribute('animation-mixer','');
-    if(usarGeoAR){
-        puntos[i].setAttribute('id','punto'+i);
-        console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
-        puntos[i].setAttribute('gps-entity-place', `latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
-		puntos[i].setAttribute("scale","0.04 0.04 0.04");
-    }else{
-        // <a-entity =""></a-entity>
-        puntos[i].setAttribute("scale","0.004 0.004 0.004");
-        puntos[i].setAttribute("position","0 0 -4");
-    }
-    escena.appendChild(puntos[i]);
-}
+// var puntos = [];
+// for(var i=0;i<lista.length;i++){
+//     puntos[i] = document.createElement('a-entity');//document.getElementById('plaza');
+//     puntos[i].setAttribute('gltf-model','#tree');
+//     puntos[i].setAttribute('animation-mixer','');
+//     if(usarGeoAR){
+//         puntos[i].setAttribute('id','punto'+i);
+//         console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
+//         puntos[i].setAttribute('gps-entity-place', `latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
+// 		puntos[i].setAttribute("scale","0.04 0.04 0.04");
+//     }else{
+//         // <a-entity =""></a-entity>
+//         puntos[i].setAttribute("scale","0.004 0.004 0.004");
+//         puntos[i].setAttribute("position","0 0 -4");
+//     }
+//     escena.appendChild(puntos[i]);
+// }
+
+
 //cargarModelo('./modelo/panredu.glb',modelo[i]);
 //modelo[i].scale.set(15,15,15);
     //escena.appendChild(punto);
