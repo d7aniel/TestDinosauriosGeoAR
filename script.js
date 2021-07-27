@@ -29,8 +29,10 @@ var simularPos = false;
 var usarGeoAR = true;
 var usarBloom = false;
 var lista = [
-    {lt:-34.901916100509666,lg:-57.96917396557861},
-    {lt:-34.911773440267986,lg:-57.96628615770538}
+    {lt:-34.901916100509666,lg:-57.96917396557861},//casa mia
+    {lt:-34.911773440267986,lg:-57.96628615770538},
+    {lt:-34.9275039,lg:-57.9371359},//casa gabriel
+    {lt:-42.788091056592606, lg:-65.0034648805737}// el sitio
 ];
 var posLuces = [
   new THREE.Vector2(0, 0),
