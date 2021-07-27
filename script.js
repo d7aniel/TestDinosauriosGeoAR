@@ -198,7 +198,7 @@ function animar(){
                     menor = parseFloat(puntos[i].getAttribute('distance'));
                 }
             }
-            for(var i=1;i<puntos.length;i++){
+            for(var i=0;i<puntos.length;i++){
                 if(i!=indice){
                     puntos[i].parentNode.removeChild(puntos[i]);
                 }else{
@@ -212,8 +212,8 @@ function animar(){
                 }
             }
             console.log(puntos[indice]);
-            titulo.style.color = "#0000ff";
-            subtitulo.style.color = "#0000ff";
+            titulo.style.color = "#ff00ff";
+            subtitulo.style.color = "#ff00ff";
             titulo.remove();
             //puntos[indice].object3D.add( objeto );
             //texto.remove();
