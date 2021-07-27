@@ -202,6 +202,7 @@ function animar(){
                 if(i!=indice){
                     puntos[i].parentNode.removeChild(puntos[i]);
                 }else{
+                    console.log("cargando modelo");
                     let modelo = document.createElement('a-entity');//document.getElementById('plaza');
                     // puntos[i].setAttribute('gltf-model','#tree');
                     modelo.setAttribute('animation-mixer','');
