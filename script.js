@@ -92,7 +92,7 @@ for(var i=0;i<lista.length;i++){
         puntos[i].setAttribute('id','punto'+i);
         console.log("creando "+`latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
         puntos[i].setAttribute('gps-entity-place', `latitude: ${lista[i].lt}; longitude: ${lista[i].lg};`);
-		puntos[i].setAttribute("scale","0.01 0.01 0.01");
+		puntos[i].setAttribute("scale","0.1 0.1 0.1");
     }else{
         // <a-entity =""></a-entity>
         puntos[i].setAttribute("scale","0.004 0.004 0.004");
