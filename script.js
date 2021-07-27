@@ -1,23 +1,23 @@
-import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
-import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
-import {ObjetoModelo} from './Particula.js';
+// import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
+// import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
+// import {ObjetoModelo} from './Particula.js';
 
-
-import { EffectComposer } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/RenderPass.js';
-import { ShaderPass } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/ShaderPass.js';
-import { UnrealBloomPass } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/UnrealBloomPass.js';
-const ENTIRE_SCENE = 0, BLOOM_SCENE = 1;
-const darkMaterial = new THREE.MeshBasicMaterial( { color: "black" } );
-const materials = {};
-const bloomLayer = new THREE.Layers();
-bloomLayer.set( BLOOM_SCENE );
-const params = {
-	exposure: 1,
-	bloomStrength: 1.5,
-	bloomThreshold: 0,
-	bloomRadius: 0
-};
+//
+// import { EffectComposer } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/EffectComposer.js';
+// import { RenderPass } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/RenderPass.js';
+// import { ShaderPass } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/ShaderPass.js';
+// import { UnrealBloomPass } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+// const ENTIRE_SCENE = 0, BLOOM_SCENE = 1;
+// const darkMaterial = new THREE.MeshBasicMaterial( { color: "black" } );
+// const materials = {};
+// const bloomLayer = new THREE.Layers();
+// bloomLayer.set( BLOOM_SCENE );
+// const params = {
+// 	exposure: 1,
+// 	bloomStrength: 1.5,
+// 	bloomThreshold: 0,
+// 	bloomRadius: 0
+// };
 
 
 var obj;
@@ -31,53 +31,53 @@ var lista = [
     {lt:-34.901916100509666,lg:-57.96917396557861},
     {lt:-34.911773440267986,lg:-57.96628615770538}
 ];
-var poss = [
-  new THREE.Vector2(0, 0),
-  new THREE.Vector2(105, 0),
-  new THREE.Vector2(-105, 0),
-  new THREE.Vector2(0, -105),
-  new THREE.Vector2(0, 105)
-];
+// var poss = [
+//   new THREE.Vector2(0, 0),
+//   new THREE.Vector2(105, 0),
+//   new THREE.Vector2(-105, 0),
+//   new THREE.Vector2(0, -105),
+//   new THREE.Vector2(0, 105)
+// ];
 
 var escena = document.querySelector('a-scene');
 console.log(escena);
-
-let renderScene;
-let bloomPass;
-let bloomComposer;
-let finalPass;
-let finalComposer;
-
-if(usarBloom){
-    escena.renderer.toneMapping = THREE.ReinhardToneMapping;
-    renderScene = new RenderPass( escena.object3D, escena.camera );
-    bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-    bloomPass.threshold = params.bloomThreshold;
-    bloomPass.strength = params.bloomStrength;
-    bloomPass.radius = params.bloomRadius;
-
-    bloomComposer = new EffectComposer( escena.renderer );
-    bloomComposer.renderToScreen = false;
-    bloomComposer.addPass( renderScene );
-    bloomComposer.addPass( bloomPass );
-
-    finalPass = new ShaderPass(
-    	new THREE.ShaderMaterial( {
-    		uniforms: {
-    			baseTexture: { value: null },
-    			bloomTexture: { value: bloomComposer.renderTarget2.texture }
-    		},
-    		vertexShader: document.getElementById( 'vertexshader' ).textContent,
-    		fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
-    		defines: {}
-    	} ), "baseTexture"
-    );
-    finalPass.needsSwap = true;
-
-    finalComposer = new EffectComposer( escena.renderer );
-    finalComposer.addPass( renderScene );
-    finalComposer.addPass( finalPass );
-}
+//
+// let renderScene;
+// let bloomPass;
+// let bloomComposer;
+// let finalPass;
+// let finalComposer;
+//
+// if(usarBloom){
+//     escena.renderer.toneMapping = THREE.ReinhardToneMapping;
+//     renderScene = new RenderPass( escena.object3D, escena.camera );
+//     bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+//     bloomPass.threshold = params.bloomThreshold;
+//     bloomPass.strength = params.bloomStrength;
+//     bloomPass.radius = params.bloomRadius;
+//
+//     bloomComposer = new EffectComposer( escena.renderer );
+//     bloomComposer.renderToScreen = false;
+//     bloomComposer.addPass( renderScene );
+//     bloomComposer.addPass( bloomPass );
+//
+//     finalPass = new ShaderPass(
+//     	new THREE.ShaderMaterial( {
+//     		uniforms: {
+//     			baseTexture: { value: null },
+//     			bloomTexture: { value: bloomComposer.renderTarget2.texture }
+//     		},
+//     		vertexShader: document.getElementById( 'vertexshader' ).textContent,
+//     		fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+//     		defines: {}
+//     	} ), "baseTexture"
+//     );
+//     finalPass.needsSwap = true;
+//
+//     finalComposer = new EffectComposer( escena.renderer );
+//     finalComposer.addPass( renderScene );
+//     finalComposer.addPass( finalPass );
+// }
 
 //sphere.layers.enable( BLOOM_SCENE );
 
@@ -200,13 +200,13 @@ function animar(){
         }
     }
 
-    if(usarBloom){
+/*    if(usarBloom){
         renderBloom(true);
     	finalComposer.render();
-    }
+    }*/
 
 }
-
+/*
 function renderBloom( mask ) {
 	if ( mask === true ) {
 		escena.object3D.traverse( darkenNonBloomed );
