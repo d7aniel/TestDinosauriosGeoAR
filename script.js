@@ -1,4 +1,4 @@
-console.log("v.29)
+console.log("v.29")
 import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 // import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
 // import {ObjetoModelo} from './Particula.js';
