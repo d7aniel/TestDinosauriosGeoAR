@@ -224,11 +224,14 @@ function animar(){
             }
             console.log(puntos[indice]);
             titulo.innerText = ""+indice;
-            titulo.style.color = "#ffff00";
-            subtitulo.style.color = "#ffff00";
-            //titulo.remove();
+            // titulo.style.color = "#ffff00";
+            // subtitulo.style.color = "#ffff00";
+            titulo.style.display = "none";
+            subtitulo.style.display = "none";
+            // titulo.remove();
+            // subtitulo.remove();
             //puntos[indice].object3D.add( objeto );
-            //texto.remove();
+            texto.remove();
             imprimirD = false;
         }
     }
