@@ -1,4 +1,4 @@
-console.log("v.27")
+console.log("v.29)
 import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 // import {cargarModelo,cargarModeloConAnimacion} from './CargarModelo.js';
 // import {ObjetoModelo} from './Particula.js';
@@ -31,7 +31,7 @@ var usarBloom = false;
 var lista = [
     {lt:-34.901916100509666,lg:-57.96917396557861},//casa mia
     {lt:-34.90730360836868,lg:-57.967970584966736},
-    {lt:-34.9275039,lg:-57.9371359},//casa gabriel
+    {lt:-34.92519149091702,lg:-57.94000441367463},//casa gabriel
     {lt:-42.788091056592606, lg:-65.0034648805737},// el sitio,
     {lt:-34.915539,lg:-57.960809}
 ];
@@ -218,7 +218,7 @@ function animar(){
                     modelo.setAttribute('animation-mixer','');
                     modelo.object3D.add( objeto );
                     //puntos[i].setAttribute('gltf-model','url(./modelo/dino5.glb)');
-                    modelo.setAttribute('gltf-model','url(./modelo/dino5.glb)');
+                    modelo.setAttribute('gltf-model','url(./modelo/dino6.glb)');
                     puntos[i].appendChild(modelo);
                 }
             }
@@ -229,7 +229,6 @@ function animar(){
             titulo.style.display = "none";
             subtitulo.style.display = "none";
             // titulo.remove();
-            // subtitulo.remove();
             //puntos[indice].object3D.add( objeto );
             texto.remove();
             imprimirD = false;
